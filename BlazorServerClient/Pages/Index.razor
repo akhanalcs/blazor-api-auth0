@@ -6,4 +6,29 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?"/>
+<h1>Welcome, @Username!</h1>
+<br />
+<img src="@PictureUrl" alt="PictureUrl"/>
+
+@code { 
+    private string Username = "Anonymous User";
+    private string PictureUrl = "";
+
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationState { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (authenticationState is not null)
+        {
+          var state = await authenticationState;
+          Username = state?.User?.Identity?.Name?? string.Empty;
+          PictureUrl = state?.User.Claims
+                      .Where(c => c.Type.Equals("picture"))
+                      .Select(c => c.Value)
+                      .FirstOrDefault() ?? string.Empty;
+        }
+
+        await base.OnInitializedAsync();
+    }
+}

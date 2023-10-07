@@ -1,11 +1,50 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models; //👈 new code
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// 👇 new code
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.Authority = builder.Configuration["Auth0:Domain"]!;
+    options.Audience = builder.Configuration["Auth0:Audience"]!;
+});
+// 👆 new code
 builder.Services.AddAuthorization();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    // This will add "Authorize" button in Swagger UI. More info: https://github.com/domaindrivendev/Swashbuckle.AspNetCore#add-security-definitions-and-requirements
+    // 👇 new code
+    var securitySchema = new OpenApiSecurityScheme
+    {
+        Description = "Using the Authorization header with the Bearer scheme.",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "Bearer"
+        }
+    };
+    
+    options.AddSecurityDefinition("Bearer", securitySchema);
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        { securitySchema, new[] { "Bearer" } }
+    });
+    // 👆 new code
+});
 
 var app = builder.Build();
 
@@ -17,6 +56,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// 👇 new code
+app.UseAuthentication();
+// 👆 new code
 
 app.UseAuthorization();
 
@@ -32,7 +75,7 @@ app.MapGet("/weather", () =>
             Random.Shared.Next(-20, 55),
             summaries[Random.Shared.Next(summaries.Length)]))
         .ToArray();
-});
+}).RequireAuthorization(); // 👈 new code
 
 app.Run();
 
