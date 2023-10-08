@@ -225,3 +225,72 @@ You use them as Bearer tokens in your HTTP requests. Don't use ID tokens to call
 2. When your app needs to call and API and finds that the access token is expired, it requests Auth0 a new access token by sending the refresh token.
 3. Auth0 sends your app a new access token and a new refresh token.
 4. Your app uses the new access token to call the API and will use the new refresh token when this new access token expires.
+
+### Enable Refresh Token support
+Go to Auth0 dashboard -> Applications -> APIs
+Find your API -> Settings
+<img width="450" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/fbb36d17-9fba-4467-adbf-d43a5ce2834e">
+
+Turn on "Allow Offline Access". Hit "Save".
+
+### Enable Refresh Token rotation
+Go to Auth0 dashboard -> Applications -> Applications
+Find your Web App -> Settings
+<img width="850" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/3c657bf9-abbf-4732-b670-aaacc6b967a5">
+
+Turn On "Rotation"
+After the change:
+<img width="850" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/21eb28f3-daa9-4073-b1e1-1fa92ca6595f">
+
+### Request refresh token in Program.cs of Web app
+<img width="400" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/6cb60d94-4ef9-42f8-b170-a8e5f908768d">
+
+### Take it for a Test ride
+Consent screen has changed:
+
+<img width="350" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/7a323193-7604-42ce-a377-48cbb899bea2">
+
+## Test Authorization in .NET Web APIs using `user-jwts` tool
+Testing a protected Web API is not at easy task. At the very least, you need to configure an authorization server, such as your Auth0 tenant, configure your app and get specific access tokens for your authorization scenarios.
+`user-jwts` tool allows you to generate tokens customized for your needs and test your API without the need for a real authorization server.
+It's a CLI tool integrated with .NET CLI from version 7.0 of the .NET SDK.
+
+### Setup the code
+Just for the testing, temporarily remove Auth0 setup from `Program.cs` in the API project:
+<img width="750" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/189f5a5e-fa4b-4f4a-a774-251257c94ed6">
+<img width="750" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/7568f016-07ea-44ce-ab9e-c46e67d77073">
+
+### Create a JWT to read weather data
+Go to the root folder of the API:
+
+<img width="550" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/1a7cf79e-41b9-4d15-b411-e4c0ef7f3123">
+
+Run the following command:
+`dotnet user-jwts create --claim permissions=read:weather`
+<img width="850" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/d31c5077-5be1-416b-b327-2ed795e9c065">
+
+Take note of the identifier of the newly created JWT(b6290aa1).
+The second line displays your username on the current machine. This is the user the JWT is issued to.
+The third line shows the token's actual content. Take note of it.
+
+### Infrastructure setup
+When I ran that command, the tool added `UserSecretsId` to my `.csproj` and modified my `appsettings.Development.json`:
+<img width="700" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/a9e4f753-34dc-4355-8b2f-a2e02dc7e05e">
+<img width="700" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/830319f1-9a93-46c4-83bd-38073fa37d42">
+
+A storage is created in your local machine's user profile folder and its identifier is added to your .NET project for future reference.
+Valid audience has the url of my API. Audience is the API the token is meant for.
+
+Keep in mind that the tokens issues by `user-jwts` tool are meant to be used only in your development envionment for testing purposes.
+
+### Use the token to read weather data from the API
+<img width="450" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/9b7cf622-50d6-4e26-b1da-5b0e6082306c">
+
+### Display Issued Tokens
+<img width="850" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/9d71c348-40df-4b6a-ab35-58abb3c6d673">
+
+To learn more about an issued JWT, take note of its identifier and run a command like this:
+`dotnet user-jwts print b6290aa1 --show-all`
+
+To remove the token:
+`dotnet user-jwts remove b6290aa1` or `dotnet user-jwts clear`
