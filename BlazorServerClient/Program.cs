@@ -25,6 +25,7 @@ builder.Services.AddAuth0WebAppAuthentication(opts =>
 .WithAccessToken(opts =>
 {
     opts.Audience = builder.Configuration["Auth0:Audience"]!; // The audience of the access token is the backend API, i.e. https://api.weatherforecast.com
+    opts.UseRefreshTokens = true; // 👈 new code to request refresh tokens
 });
 // 👆 new code
 // 👆 new code

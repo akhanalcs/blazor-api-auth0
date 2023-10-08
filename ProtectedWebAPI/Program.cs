@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models; //👈 new code
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,9 +15,24 @@ builder.Services.AddAuthentication(options =>
 {
     options.Authority = builder.Configuration["Auth0:Domain"]!;
     options.Audience = builder.Configuration["Auth0:Audience"]!;
+    options.TokenValidationParameters = 
+        new TokenValidationParameters
+        {
+            ClockSkew = TimeSpan.Zero  // 👈 new code. Change token expiration tolerance. 5 minutes is default.
+        };
 });
 // 👆 new code
-builder.Services.AddAuthorization();
+
+// 👇 new code
+builder.Services.AddAuthorization(options =>
+{
+    // Add authorization policy
+    options.AddPolicy("WeatherReadAccess", policy =>
+    {
+        policy.RequireClaim("permissions", "read:weather");
+    });
+});
+// 👆 new code
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -75,7 +91,7 @@ app.MapGet("/weather", () =>
             Random.Shared.Next(-20, 55),
             summaries[Random.Shared.Next(summaries.Length)]))
         .ToArray();
-}).RequireAuthorization(); // 👈 new code
+}).RequireAuthorization("WeatherReadAccess"); // 👈 new code
 
 app.Run();
 

@@ -10,23 +10,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37632732-027c-45ae-a22e-9fdad72da96a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BlazorServerClient/Pages/Login.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerClient/Pages/Login.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerClient/Pages/Logout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerClient/Pages/Logout.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerClient/TokenHandler.cs" afterDir="false" />
+    <list default="true" id="37632732-027c-45ae-a22e-9fdad72da96a" name="Changes" comment="Makes the frontend able to call the Protected backend successfully 🎉">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.blazor-api-auth0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.blazor-api-auth0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/App.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/BlazorServerClient.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/BlazorServerClient.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/Pages/FetchData.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerClient/Data/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/Data/WeatherForecastService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorServerClient/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/Shared/LoginDisplay.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/Shared/LoginDisplay.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/Shared/SurveyPrompt.razor" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorServerClient/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProtectedWebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProtectedWebAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtectedWebAPI/ProtectedWebAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProtectedWebAPI/ProtectedWebAPI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProtectedWebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProtectedWebAPI/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +38,7 @@
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Shared/LoginDisplay.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Shared/LoginDisplay.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -168,7 +158,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696642631395</updated>
-      <workItem from="1696642632539" duration="13647000" />
+      <workItem from="1696642632539" duration="18536000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -178,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696649124922</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Makes the frontend able to call the Protected backend successfully 🎉">
+      <option name="closed" value="true" />
+      <created>1696721393606</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696721393606</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +186,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Makes the frontend able to call the Protected backend successfully " />
+    <option name="LAST_COMMIT_MESSAGE" value="Makes the frontend able to call the Protected backend successfully " />
   </component>
 </project>
