@@ -296,17 +296,15 @@ To remove the token:
 `dotnet user-jwts remove b6290aa1` or `dotnet user-jwts clear`
 
 ## OIDC
-Get AccessToken, Id token and refresh token.
+Get AccessToken, Refresh token and Id token (corresponding to the tiny user icons shown below).
 Use Id token to create a cookie on the user agent.
 
-<img width="600" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/fc1472fd-3ebb-499d-8502-a74f38be84d7">
-
+<img width="550" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/e1d144ca-9733-4147-b0ec-e8bfc96f4f4e">
 
 Reference. [here](https://youtu.be/hesoqoKUMic?si=T4ZTPT8iTeP-LG8p&t=1920).
 
-
 ## Access tokens never make it to the user agent (for eg: Browser)
-<img width="650" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/d2ae78e8-bfb8-485c-b74d-89b75e1afd38">
+<img width="550" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/d2ae78e8-bfb8-485c-b74d-89b75e1afd38">
 
 Here for eg: 
 User tries to access my app, gets redirected to YouTube for login which hands out a one time password to my app, the app then exchanges that one time password for an access token that gets stored in the database/ cache etc. and deals out a cookie to the browser.
