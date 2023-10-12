@@ -294,3 +294,12 @@ To learn more about an issued JWT, take note of its identifier and run a command
 
 To remove the token:
 `dotnet user-jwts remove b6290aa1` or `dotnet user-jwts clear`
+
+## Access tokens never make it to the user agent (for eg: Browser)
+<img width="650" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/d2ae78e8-bfb8-485c-b74d-89b75e1afd38">
+
+Here for eg: 
+User tries to access my app, gets redirected to YouTube for login which hands out a one time password to my app, the app then exchanges that one time password for an access token that gets stored in the database/ cache etc. and deals out a cookie to the browser.
+[Shown in the picture] The browser then uses that cookie to make requests to my app. My app grabs the access token based on the user info in the cookie to make requests to YouTube.
+
+The tiny logo of an user represents Access Token in the picture.
