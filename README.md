@@ -299,9 +299,11 @@ To remove the token:
 Get AccessToken, Id token and refresh token.
 Use Id token to create a cookie on the user agent.
 
-<img width="650" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/fc1472fd-3ebb-499d-8502-a74f38be84d7">
+<img width="600" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/fc1472fd-3ebb-499d-8502-a74f38be84d7">
+
 
 Reference. [here](https://youtu.be/hesoqoKUMic?si=T4ZTPT8iTeP-LG8p&t=1920).
+
 
 ## Access tokens never make it to the user agent (for eg: Browser)
 <img width="650" alt="image" src="https://github.com/affableashish/blazor-api-auth0/assets/30603497/d2ae78e8-bfb8-485c-b74d-89b75e1afd38">
