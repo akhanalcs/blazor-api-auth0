@@ -10,13 +10,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37632732-027c-45ae-a22e-9fdad72da96a" name="Changes" comment="Makes the frontend able to call the Protected backend successfully 🎉">
+    <list default="true" id="37632732-027c-45ae-a22e-9fdad72da96a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.blazor-api-auth0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.blazor-api-auth0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/Data/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/Data/WeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerClient/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerClient/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtectedWebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProtectedWebAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProtectedWebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProtectedWebAPI/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -31,22 +28,28 @@
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/App.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/App.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/App.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Data/WeatherForecastService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Pages/FetchData.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Pages/FetchData.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Pages/Index.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Shared/LoginDisplay.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/BlazorServerClient/Shared/LoginDisplay.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/ashishkhanal/RiderProjects/blazor-api-auth0/ProtectedWebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2WPmXp2RpfJGMJTPUeyw9Q0UD3l" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,17 +69,18 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "/Users/ashishkhanal/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
-      "/Users/ashishkhanal/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache",
+      "/Users/ashishkhanal/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/ashishkhanal/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
       "/Users/ashishkhanal/.local/share/Symbols/src"
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Compound.API + Client">
+  <component name="RunManager" selected=".NET Launch Settings Profile.ProtectedWebAPI: https">
     <configuration name="API + Client" type="CompoundRunConfigurationType">
       <toRun name="BlazorServerClient: https" type="LaunchSettings" />
       <toRun name="ProtectedWebAPI: https" type="LaunchSettings" />
@@ -158,7 +162,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696642631395</updated>
-      <workItem from="1696642632539" duration="18536000" />
+      <workItem from="1696642632539" duration="21381000" />
+      <workItem from="1702321050322" duration="207000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -176,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696721393606</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add support for refresh tokens">
+      <option name="closed" value="true" />
+      <created>1696792190529</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696792190529</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +200,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Makes the frontend able to call the Protected backend successfully " />
-    <option name="LAST_COMMIT_MESSAGE" value="Makes the frontend able to call the Protected backend successfully " />
+    <MESSAGE value="Add support for refresh tokens" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add support for refresh tokens" />
   </component>
 </project>
